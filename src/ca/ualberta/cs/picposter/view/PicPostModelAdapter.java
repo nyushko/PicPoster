@@ -13,18 +13,17 @@ import ca.ualberta.cs.picposter.R;
 import ca.ualberta.cs.picposter.model.PicPostModel;
 
 /**
- * An ArrayAdapter for a PicPostModel.
- * Most of the code in this class is taken from 
- * http://stackoverflow.com/questions/8166497/custom-adapter-for-list-view
+ * An ArrayAdapter for a PicPostModel. Most of the code in this class is taken
+ * from http://stackoverflow.com/questions/8166497/custom-adapter-for-list-view
+ * 
  * @author zjullion
  */
 public class PicPostModelAdapter extends ArrayAdapter<PicPostModel> {
 
-
-	public PicPostModelAdapter(Context context, int resource, List<PicPostModel> model) {
+	public PicPostModelAdapter(Context context, int resource,
+			List<PicPostModel> model) {
 		super(context, resource, model);
 	}
-
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -37,15 +36,18 @@ public class PicPostModelAdapter extends ArrayAdapter<PicPostModel> {
 		PicPostModel picPostModel = this.getItem(position);
 		if (picPostModel != null) {
 
-			//ImageView picImageView = (ImageView)convertView.findViewById(R.id.pic_image_view);
-			//if (picImageView != null)
-			//	picImageView.setImageBitmap(picPostModel.getPicture());
-			
-			TextView picText = (TextView)convertView.findViewById(R.id.pic_text);
+			// ImageView picImageView =
+			// (ImageView)convertView.findViewById(R.id.pic_image_view);
+			// if (picImageView != null)
+			// picImageView.setImageBitmap(picPostModel.getPicture());
+
+			TextView picText = (TextView) convertView
+					.findViewById(R.id.pic_text);
 			if (picText != null)
 				picText.setText(picPostModel.getText());
-			
-			TextView picTimestamp = (TextView)convertView.findViewById(R.id.pic_timestamp);
+
+			TextView picTimestamp = (TextView) convertView
+					.findViewById(R.id.pic_timestamp);
 			if (picTimestamp != null)
 				picTimestamp.setText(picPostModel.getTimestamp().toString());
 		}
